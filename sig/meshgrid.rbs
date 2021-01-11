@@ -1,0 +1,7 @@
+module Meshgrid
+    def meshgrid: (*untyped) -> untyped
+    def self.meshgrid: (*untyped) -> untyped
+
+    class Error < StandardError
+    end
+end
