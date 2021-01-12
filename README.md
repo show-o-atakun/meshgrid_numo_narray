@@ -1,12 +1,6 @@
 # Meshgrid
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/meshgrid`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
-
 ## Installation
-
-Add this line to your application's Gemfile:
 
 ```ruby
 gem 'meshgrid'
@@ -22,7 +16,31 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Here are some examples:
+
+```ruby
+require "meshgrid"
+require "numo/narray"
+
+x = Numo::Int32[0..5]
+y = Numo::Int32[0..8]
+mg = Meshgrid.meshgrid(x, y)
+p mg
+```
+
+Then you'll find that mg is 2D Array contains two grid-shaped(X 0..5, Y 0..8) Numo::Int32 NArrays.
+
+You can generate 3D Mesh with same literature. That is:  
+```ruby
+require "meshgrid"
+require "numo/narray"
+
+x = Numo::Int32[0..5]
+y = Numo::Int32[0..8]
+z = Numo::Int32[0..10]
+mg = Meshgrid.meshgrid(x, y, z)
+p mg
+```
 
 ## Development
 
